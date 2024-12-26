@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const NavBar = () => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+
   return (
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       {/* LOGO */}
@@ -29,7 +32,7 @@ const NavBar = () => {
           <a href="">About</a>
           <a href="">
             <button className="py-2 px-4 bg-blue-800 rounded-3xl text-white">
-              Login 👋
+              {t("login")}
             </button>
           </a>
         </div>
@@ -42,7 +45,7 @@ const NavBar = () => {
         <a href="">About</a>
         <a href="">
           <button className="py-2 px-4 bg-blue-800 rounded-3xl text-white">
-            Login 👋
+            {t("login")}
           </button>
         </a>
       </div>
