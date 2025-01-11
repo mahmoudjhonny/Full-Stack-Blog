@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import Image from "./Image";
+import LanguageSelector from "./LanguageSelector";
 
 const NavBar = () => {
   const { t } = useTranslation();
@@ -9,7 +11,7 @@ const NavBar = () => {
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       {/* LOGO */}
       <div className="flex items-center gap-4 text-2xl font-bold">
-        <img className="w-8" src="/logo.png" alt="" />
+        <Image src="logo.png" alt="logo image" width={32} height={32} />
         <span>Lama Logo</span>
       </div>
       {/* MOBILE MENU */}
@@ -18,7 +20,7 @@ const NavBar = () => {
           className="cursor-pointer text-4xl"
           onClick={() => setOpen((prev) => !prev)}
         >
-          {open ? "X" : "Y"}
+          {open ? "X" : "☰"}
         </div>
         {/* Mobile Link List */}
         <div
@@ -35,6 +37,7 @@ const NavBar = () => {
               {t("login")}
             </button>
           </a>
+          <LanguageSelector />
         </div>
       </div>
       {/* DESKTOP MENU */}
@@ -48,6 +51,7 @@ const NavBar = () => {
             {t("login")}
           </button>
         </a>
+        <LanguageSelector />
       </div>
     </div>
   );
